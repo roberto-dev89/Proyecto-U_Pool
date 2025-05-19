@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+      body {
+        font-family: "Figtree", Arial, sans-serif, sans-serif;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+              content.style.maxHeight = null;
+              content.style.animation = "slideIn 0.5s forwards";
+            } else {
+              content.style.display = "block";
+              content.style.animation = "slideIn 0.5s forwards";
+            }
+          });
+        }
+
+        var imgThumbnails = document.querySelectorAll(".img-content img");
+        var popup = document.getElementById("popup-img");
+        var fullImg = document.getElementById("full-img");
+        var closePopup = document.querySelector(".close-popup");
+
+        imgThumbnails.forEach(function (img) {
+          img.addEventListener("click", function () {
+            popup.style.display = "flex";
+            fullImg.src = this.src;
+          });
+        });
+
+        closePopup.addEventListener("click", function () {
+          popup.style.display = "none";
+        });
+
+        popup.addEventListener("click", function (e) {
+          if (e.target === popup) {
+            popup.style.display = "none";
+          }
+        });
+      });
+    </script>
+    <title>Solicitudes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <form id="frmUser" method="POST">
+      <nav class="sidebar close">
+        <header>
+          <a href="miCuenta.html" id="account">
+            <div class="image-text">
+              <span class="image">
+                <img src="../fotos/betito.jpg" alt="logo" />
+              </span>
+              <div class="text header-text">
+                <span class="name">Usuario</span>
+                <span class="profession">Administrador</span>
+              </div>
+            </div>
+          </a>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
+
+        <div class="menu-bar">
+          <div class="menu">
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="administrador.html">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Inicio</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="listarusuarios.html">
+                  <i class="bx bxs-door-open icon"></i>
+                  <span class="text nav-text">Usuarios</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="viajes.html">
+                  <i class="bx bxs-user-account icon"></i>
+                  <span class="text nav-text">Viajes</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="solicitudes.html">
+                  <i class="bx bxs-notification icon"></i>
+                  <span class="text nav-text">Solicitudes</span>
+                </a>
+              </li>
+              <li class="logout">
+                <a href="../cerrarsesion.html">
+                  <i class="bx bx-log-out icon"></i>
+                  <span class="text nav-text">Cerrar sesión</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="logo-slidebar">
+            <img src="../fotos/logo.png" alt="logo" class="logo-sidebar" />
+          </div>
+        </div>
+      </nav>
+      <main class="home" id="solicitudes-main">
+        <div class="main-preguntas">
+          <div class="preguntas-title">
+            <h1>Solicitudes</h1>
+          </div>
+          <!-- Example of 2 fixed solicitudes, add more as needed -->
+          <div class="preguntas">
+            <div class="collapsible">
+              <p>Solicitud 1</p>
+              <i class="bx bxs-chevron-down"></i>
+            </div>
+            <div class="content">
+              <p>Usuario: juanperez</p>
+              <div class="solicitud-images">
+                <div class="img-line1">
+                  <div class="img-content">
+                    <p>Foto: Permiso para conducir (Frente)</p>
+                    <img
+                      src="../fotos/permisoA.jpg"
+                      alt="Permiso de conducir frente"
+                    />
+                  </div>
+                  <div class="img-content">
+                    <p>Foto: Permiso para conducir (Trasera)</p>
+                    <img
+                      src="../fotos/permisoPau.avif"
+                      alt="Permiso de conducir trasera"
+                    />
+                  </div>
+                  <div class="img-content">
+                    <p>Foto: Comprobante de seguro vehicular</p>
+                    <img
+                      src="../fotos/seguroPau.jpg"
+                      alt="Seguro vehicular"
+                    />
+                  </div>
+                </div>
+                <div class="img-line2">
+                  <div class="img-content">
+                    <p>Foto: Automóvil (Perfil)</p>
+                    <img
+                      src="../fotos/carroPerfil.jpg"
+                      alt="Automóvil perfil"
+                    />
+                  </div>
+                  <div class="img-content">
+                    <p>Foto: Automóvil (Frente)</p>
+                    <img
+                      src="../fotos/carroFrente.jpg"
+                      alt="Automóvil frente"
+                    />
+                  </div>
+                  <div class="img-content">
+                    <p>Foto: Automóvil (Atrás)</p>
+                    <img
+                      src="../fotos/carroFrente.jpg"
+                      alt="Automóvil atrás"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="solicitud-buttons">
+                <input
+                  type="submit"
+                  id="btnAceptar1"
+                  name="btnAceptar1"
+                  value="Aceptar"
+                />
+                <input
+                  type="submit"
+                  id="btnDenegar1"
+                  name="btnDenegar1"
+                  value="Denegar"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="preguntas">
+            <div class="collapsible">
+              <p>Solicitud 2</p>
+              <i class="bx bxs-chevron-down"></i>
+            </div>
+            <div class="content">
+              <p>Usuario: mariagarcia</p>
+              <div class="solicitud-images">
+                <div class="img-line1">
+                  <div class="img-content">
+                    <p>Foto: Permiso para conducir (Frente)</p>
+                    <img
+                      src="../fotos/permiso-frente2.jpg"
+                      alt="Permiso de conducir frente"
+                    />
+                  </div>
+                  <div class="img-content">
+                    <p>Foto: Permiso para conducir (Trasera)</p>
+                    <img
+                      src="../fotos/permiso-trasera2.jpg"
+                      alt="Permiso de conducir trasera"
+                    />
+                  </div>
+                  <div class="img-content">
+                    <p>Foto: Comprobante de seguro vehicular</p>
+                    <img
+                      src="../fotos/seguro2.jpg"
+                      alt="Seguro vehicular"
+                    />
+                  </div>
+                </div>
+                <div class="img-line2">
+                  <div class="img-content">
+                    <p>Foto: Automóvil (Perfil)</p>
+                    <img
+                      src="../fotos/auto-perfil2.jpg"
+                      alt="Automóvil perfil"
+                    />
+                  </div>
+                  <div class="img-content">
+                    <p>Foto: Automóvil (Frente)</p>
+                    <img
+                      src="../fotos/auto-frente2.jpg"
+                      alt="Automóvil frente"
+                    />
+                  </div>
+                  <div class="img-content">
+                    <p>Foto: Automóvil (Atrás)</p>
+                    <img
+                      src="../fotos/auto-atras2.jpg"
+                      alt="Automóvil atrás"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="solicitud-buttons">
+                <input
+                  type="submit"
+                  id="btnAceptar2"
+                  name="btnAceptar2"
+                  value="Aceptar"
+                />
+                <input
+                  type="submit"
+                  id="btnDenegar2"
+                  name="btnDenegar2"
+                  value="Denegar"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup-img" class="popup-overlay">
+          <div class="popup-content">
+            <img src="" alt="Imagen Ampliada" id="full-img" />
+            <span class="close-popup">&times;</span>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer-location">
+          <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+        </div>
+        <div class="footer-main">
+          <p>upool4754@gmail.com</p>
+          <p>
+            U-Pool,
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            ©
+          </p>
+        </div>
+        <div class="footer-img">
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-twitter"></i>
+        </div>
+      </footer>
+    </form>
+    <script src="../assets/main.js"></script>
+  </body>
+</html>

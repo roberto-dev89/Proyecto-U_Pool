@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+        body{
+            font-family: 'Figtree', Arial, sans-serif, sans-serif;
+        }
+    </style>
+    <title>Registro</title>
+</head>
+<body>
+    <form id="frmAcceso" method="POST">
+        <nav class="sidebar close">
+            <header>
+                <a href="miCuenta.html" id="account">
+                    <div class="image-text">
+                      <span class="image">
+                        <img src="../assets/img/default-user.png" alt="logo" />
+                      </span>
+                      <div class="text header-text">
+                        <span class="name">Usuario</span>
+                        <span class="profession">Rol</span>
+                      </div>
+                    </div>
+                  </a>
+                <i class="bx bx-chevron-right toggle"></i>
+            </header>
+            <div class="menu-bar">
+                <div class="menu">
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                            <a href="administrador.html">
+                                <i class='bx bx-home-alt icon'></i>
+                                <span class="text nav-text">Inicio</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="listarusuarios.html">
+                                <i class='bx bxs-door-open icon' ></i>
+                                <span class="text nav-text">Usuarios</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="viajes.html">
+                                <i class='bx bxs-user-account icon'></i>
+                                <span class="text nav-text">Viajes</span>
+                            </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="solicitudes.html">
+                                <i class='bx bxs-notification icon'></i>
+                                <span class="text nav-text">Solicitudes</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logo-slidebar">
+                    <img src="../assets/img/logo.png" alt="logo" class="logo-sidebar">
+                </div>
+                <div class="bottom-content">
+                    <ul>
+                        <li class="logout">
+                            <a href="../cerrarsesion.html">
+                                <i class="bx bx-log-out icon"></i>
+                                <span class="text nav-text">Cerrar sesión</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="home" id="acceso">
+            <section class="info">
+                <div class="title-info">
+                    <h1><br>Prueba ahora el nuevo método de transporte!</h1>
+                </div>
+                <div class="about-info">
+                    <p class="simple-text">Unete al programa y descubre las ventajas</p>
+                    <p class="sub-title"> <i class='bx bx-user icon'></i> &ensp; Un servicio Pensado para los estudiantes</p>
+                    <p class="sub-title"> <i class='bx bx-shield-plus icon'></i> &ensp; La comunidad estudiantil se ayudará mutuamente de una manera eficaz y segura</p>
+                    <p class="sub-title"> <i class='bx bx-coin icon' ></i> &ensp; Ahorra tiempo y dinero</p>
+                    <p class="sub-title"> <i class='bx bx-car icon' ></i> &ensp; Conoce a conductores calificados</p>
+                    <p class="sub-title"> <i class='bx bxs-car icon' ></i> &ensp; Comparte viajes con la comunidad</p>
+                </div>
+            </section>
+            <section class="login">
+                <div class="form-login">
+                    <p>Registrar usuario</p>
+                    <div class="box-login">
+                        <label for="txtMatricula">Matrícula</label>
+                        <input type="number" name="txtMatricula" id="txtMatricula" required>
+                    </div>
+                    <div class="box-login">
+                        <label for="txtUsuarioNuevo">Usuario</label>
+                        <input type="text" name="txtUsuarioNuevo" id="txtUsuarioNuevo" required>
+                    </div>
+                    <div class="box-login">
+                        <label for="txtContraNueva">Contraseña</label>
+                        <input type="password" name="txtContraNueva" id="txtContraNueva" required>
+                    </div>
+                    <div class="box-login">
+                        <label for="txtTelefono">Teléfono</label>
+                        <input type="tel" name="txtTelefono" id="txtTelefono" required>
+                    </div>
+                    <div class="box-login">
+                        <label for="lstTipo">Tipo de usuario</label>
+                        <select name="lstTipo" id="lstTipo" required>
+                            <option value="1">Administrador</option>
+                            <option value="2">Estudiante</option>
+                            <option value="3">Conductor</option>
+                        </select>
+                    </div>
+                    <div class="box-login-button">
+                        <input type="submit" value="Registrar" class="button" name="btnRegistrarse">
+                        <input type="button" value="Volver" class="button" name="btnVolver" id="btnVolver">
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-location">
+                <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+            </div>
+            <div class="footer-main">
+                <p>upool4754@gmail.com</p>
+                <p>U-Pool, <script type="text/javascript">document.write(new Date().getFullYear());</script>©</p>
+            </div>
+            <div class="footer-img">
+                <i class='bx bxl-facebook'></i>
+                <i class='bx bxl-twitter' ></i>        
+            </div>
+        </footer>
+    </form>
+    <script src="../assets/main.js"></script>
+    <script>
+        // Simple front-end validation and redirect for "Volver" button
+        document.getElementById('btnVolver').onclick = function() {
+            window.location.href = "administrador.html";
+        };
+        // Optional: Prevent form submission (since no backend)
+        document.getElementById('frmAcceso').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Usuario registrado correctamente (simulado).');
+            this.reset();
+        };
+    </script>
+</body>
+</html>

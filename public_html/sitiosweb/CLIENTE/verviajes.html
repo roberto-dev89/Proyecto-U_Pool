@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viajes Publicados</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+      body {
+        font-family: "Figtree", Arial, sans-serif, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="frmPublicarViaje" method="post">
+      <nav class="sidebar close">
+        <header>
+          <a href="micuenta1.html" id="account">
+            <div class="image-text">
+              <span class="image">
+                <img src="../fotos/betito.jpg" alt="logo" />
+              </span>
+              <div class="text header-text">
+                <span class="name">Usuario</span>
+                <span class="profession">Cliente</span>
+              </div>
+            </div>
+          </a>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
+        <div class="menu-bar">
+          <div class="menu">
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="cliente.html">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Inicio</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="buscarviaje.html">
+                  <i class="bx bx-car icon"></i>
+                  <span class="text nav-text">Buscar Viaje</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <!-- Fixed option: show "Solicita ser conductor" always as front-end only -->
+                <a href="registroConductor.html">
+                  <i class="bx bxs-car icon"></i>
+                  <span class="text nav-text">Solicita ser conductor</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="viajescliente.html">
+                  <i class="bx bx-trip icon"></i>
+                  <span class="text nav-text">Viajes</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="dudascliente.html">
+                  <i class="bx bx-help-circle icon"></i>
+                  <span class="text nav-text">Preguntas frecuentes</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="logo-slidebar">
+            <img src="../assets/img/logo.png" alt="logo" class="logo-sidebar" />
+          </div>
+          <div class="bottom-content">
+            <li class="logout">
+              <a href="../cerrarsesion.html">
+                <i class="bx bx-log-out icon"></i>
+                <span class="text nav-text">Cerrar sesión</span>
+              </a>
+            </li>
+          </div>
+        </div>
+      </nav>
+
+      <main class="home">
+        <section class="viajes-main">
+          <div class="viajes" id="buscar-viaje">
+            <!-- Example of fixed viajes, repeat as needed -->
+            <form method="get">
+              <div class="viajes-content">
+                <div class="viaje-info">
+                  <div class="horas">
+                    <div class="hora-inicio">
+                      <i class="bx bx-time-five icon"></i>
+                      <p>08:00</p>
+                      <p>-</p>
+                      <p>Tolcayuca</p>
+                    </div>
+                    <div class="hora-final">
+                      <i class="bx bx-calendar icon"></i>
+                      <p>2024-06-01</p>
+                      <p>-</p>
+                      <p>Pachuca</p>
+                    </div>
+                  </div>
+                  <div class="costo">
+                    <p>$50</p>
+                  </div>
+                </div>
+                <div class="conductor-info">
+                  <div class="viajes-img">
+                    <img src="../assets/img/default-user.png" alt="conductor" />
+                  </div>
+                  <div class="conductor-name">
+                    <p>Juan Pérez</p>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <form method="get">
+              <div class="viajes-content">
+                <div class="viaje-info">
+                  <div class="horas">
+                    <div class="hora-inicio">
+                      <i class="bx bx-time-five icon"></i>
+                      <p>09:30</p>
+                      <p>-</p>
+                      <p>Tizayuca</p>
+                    </div>
+                    <div class="hora-final">
+                      <i class="bx bx-calendar icon"></i>
+                      <p>2024-06-02</p>
+                      <p>-</p>
+                      <p>CDMX</p>
+                    </div>
+                  </div>
+                  <div class="costo">
+                    <p>$80</p>
+                  </div>
+                </div>
+                <div class="conductor-info">
+                  <div class="viajes-img">
+                    <img src="../assets/img/default-user.png" alt="conductor" />
+                  </div>
+                  <div class="conductor-name">
+                    <p>María López</p>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!-- Add more fixed viajes as needed -->
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-location">
+          <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+        </div>
+        <div class="footer-main">
+          <p>upool4754@gmail.com</p>
+          <p>
+            U-Pool,
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            ©
+          </p>
+        </div>
+        <div class="footer-img">
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-twitter"></i>
+        </div>
+      </footer>
+      <script src="../assets/main.js"></script>
+    </form>
+  </body>
+</html>

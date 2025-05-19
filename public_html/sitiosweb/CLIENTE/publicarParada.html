@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const startDateInput = document.getElementById("start");
+        if (!startDateInput) return;
+
+        function setMinMaxDates() {
+          const today = new Date();
+          const tomorrow = new Date(today);
+          tomorrow.setDate(tomorrow.getDate() + 1);
+
+          // Encuentra el próximo viernes
+          const nextFriday = new Date(today);
+          while (nextFriday.getDay() !== 5) {
+            nextFriday.setDate(nextFriday.getDate() + 1);
+          }
+
+          startDateInput.min = formatDate(tomorrow);
+          startDateInput.max = formatDate(nextFriday);
+        }
+
+        function formatDate(date) {
+          return date.toISOString().split("T")[0];
+        }
+
+        function validateDate() {
+          const selectedDate = new Date(startDateInput.value);
+          const dayOfWeek = selectedDate.getDay();
+
+          // 0 para Domingo, 6 para Sábado
+          if (dayOfWeek === 0 || dayOfWeek === 6) {
+            alert(
+              "Los sábados y domingos no están disponibles. Por favor, seleccione otro día."
+            );
+            startDateInput.value = formatDate(new Date(startDateInput.min));
+          }
+        }
+
+        setMinMaxDates();
+        startDateInput.addEventListener("change", validateDate);
+      });
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+      body {
+        font-family: "Figtree", Arial, sans-serif, sans-serif;
+      }
+    </style>
+    <title>Publicar viaje</title>
+  </head>
+
+  <body>
+    <form method="post" id="frmPublicar">
+      <nav class="sidebar close">
+        <header>
+          <a href="micuenta1.html" id="account">
+            <div class="image-text">
+              <span class="image">
+                <img src="../fotos/betito.jpg" alt="logo" />
+              </span>
+              <div class="text header-text">
+                <span class="name">Usuario</span>
+                <span class="profession">Cliente</span>
+              </div>
+            </div>
+          </a>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
+        <div class="menu-bar">
+          <div class="menu">
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="cliente.html">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Inicio</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="buscarviaje.html">
+                  <i class="bx bx-car icon"></i>
+                  <span class="text nav-text">Buscar Viaje</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <!-- Fixed option: show "Solicita ser conductor" always as front-end only -->
+                <a href="registroConductor.html">
+                  <i class="bx bxs-car icon"></i>
+                  <span class="text nav-text">Solicita ser conductor</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="viajescliente.html">
+                  <i class="bx bx-trip icon"></i>
+                  <span class="text nav-text">Viajes</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="dudascliente.html">
+                  <i class="bx bx-help-circle icon"></i>
+                  <span class="text nav-text">Preguntas frecuentes</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="logo-slidebar">
+            <img src="../assets/img/logo.png" alt="logo" class="logo-sidebar" />
+          </div>
+          <div class="bottom-content">
+            <li class="logout">
+              <a href="../cerrarsesion.html">
+                <i class="bx bx-log-out icon"></i>
+                <span class="text nav-text">Cerrar sesión</span>
+              </a>
+            </li>
+          </div>
+        </div>
+      </nav>
+
+      <main class="home" id="search">
+        <form method="post">
+          <div class="buscar-main">
+            <div class="buscar-info" id="publicar-info">
+              <h2>Agrega tus paradas</h2>
+              <div class="info-inputs">
+                <i class="bx bx-map"></i>
+                <select name="lstParada" title="Parada" id="lstParada">
+                  <option value="0" disabled selected>
+                    Selecciona una parada
+                  </option>
+                  <option value="1">
+                    Universidad Politécnica Metropolitana de Hidalgo
+                  </option>
+                  <option value="2">Centro de Tolcayuca</option>
+                  <option value="3">Parque Industrial</option>
+                  <option value="4">Colonia Centro</option>
+                  <option value="5">Otra parada</option>
+                </select>
+              </div>
+              <div class="info-button1">
+                <input type="submit" value="Agregar" name="btnAgregar" />
+              </div>
+              <h2>¿Tu parada no está registrada? Ingrésala aquí</h2>
+              <div id="newStopFields">
+                <div class="info-inputs">
+                  <i class="bx bx-map"></i>
+                  <input
+                    type="text"
+                    value=""
+                    placeholder="Ingresa el nombre de la parada"
+                    name="txtNuevaParada"
+                    id="txtNuevaParada"
+                  />
+                </div>
+                <div class="info-inputs">
+                  <i class="bx bx-map"></i>
+                  <input
+                    type="text"
+                    value=""
+                    placeholder="Ingresa la dirección de la parada"
+                    name="txtNuevaDireccion"
+                    id="txtNuevaDireccion"
+                  />
+                </div>
+                <br /><br />
+                <div class="mapa">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42435.23459697368!2d-98.92392845357533!3d19.933662288764108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d199b73f4326ad%3A0x5aed2b67250350ee!2sUniversidad%20Polit%C3%A9cnica%20Metropolitana%20de%20Hidalgo!5e0!3m2!1sen!2smx!4v1710708662544!5m2!1sen!2smx"
+                    width="100%"
+                    height="500px"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+                <div class="info-button1">
+                  <input type="submit" value="Agregar" name="btnAgregarNueva" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-location">
+          <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+        </div>
+        <div class="footer-main">
+          <p>upool4754@gmail.com</p>
+          <p>
+            U-Pool,
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            ©
+          </p>
+        </div>
+        <div class="footer-img">
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-twitter"></i>
+        </div>
+      </footer>
+      <script>
+        // Show/hide new stop fields
+        document.addEventListener("DOMContentLoaded", function () {
+          var btn = document.getElementById("showNewStop");
+          var fields = document.getElementById("newStopFields");
+          if (btn && fields) {
+            btn.addEventListener("click", function () {
+              fields.style.display =
+                fields.style.display === "none" ? "block" : "none";
+            });
+          }
+        });
+      </script>
+      <script src="../assets/main.js"></script>
+    </form>
+  </body>
+</html>

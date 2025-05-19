@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Cuenta</title>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+      body {
+        font-family: "Figtree", Arial, sans-serif, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="frmMiCuenta" method="post">
+      <nav class="sidebar close">
+        <header>
+          <a href="miCuenta.html" id="account">
+            <div class="image-text">
+              <span class="image">
+                <img src="../fotos/betito.jpg" alt="logo" />
+              </span>
+              <div class="text header-text">
+                <span class="name">Usuario</span>
+                <span class="profession">Administrador</span>
+              </div>
+            </div>
+          </a>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
+
+        <div class="menu-bar">
+          <div class="menu">
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="administrador.html">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Inicio</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="listarusuarios.html">
+                  <i class="bx bxs-door-open icon"></i>
+                  <span class="text nav-text">Usuarios</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="viajes.html">
+                  <i class="bx bxs-user-account icon"></i>
+                  <span class="text nav-text">Viajes</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="solicitudes.html">
+                  <i class="bx bxs-notification icon"></i>
+                  <span class="text nav-text">Solicitudes</span>
+                </a>
+              </li>
+              <li class="logout">
+                <a href="../cerrarsesion.html">
+                  <i class="bx bx-log-out icon"></i>
+                  <span class="text nav-text">Cerrar sesión</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="logo-slidebar">
+            <img src="../assets/img/logo.png" alt="logo" class="logo-sidebar" />
+          </div>
+        </div>
+      </nav>
+
+      <section class="main-account">
+        <form method="post">
+          <div class="account-main-info">
+            <div class="account-img">
+              <img src="../fotos/betito.jpg" alt="user" />
+            </div>
+            <div class="account-info">
+              <div class="personal-data">
+                <label for="txtNombre">Nombre completo:</label>
+                <input
+                  type="text"
+                  name="txtNombre"
+                  id="txtNombre"
+                  value="Juan Pérez"
+                  disabled
+                />
+
+                <label for="txtMatricula">Matrícula:</label>
+                <input
+                  type="text"
+                  name="txtMatricula"
+                  id="txtMatricula"
+                  value="A01234567"
+                  disabled
+                />
+
+                <label for="txtTipo">Tipo de usuario:</label>
+                <input
+                  type="text"
+                  name="txtTipo"
+                  id="txtTipo"
+                  value="Administrador"
+                  disabled
+                />
+
+                <label>Es conductor:</label>
+                <div class="checkbox">
+                  <label>
+                    <input
+                      type="radio"
+                      name="conductor"
+                      value="Si"
+                      checked
+                      disabled
+                      title="Es conductor: Sí"
+                    />
+                    Si
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="conductor"
+                      value="No"
+                      disabled
+                      title="Es conductor: No"
+                    />
+                    No
+                  </label>
+                </div>
+              </div>
+              <div class="account-data">
+                <label for="txtUsuario">Nombre de usuario</label>
+                <input
+                  type="text"
+                  name="txtUsuario"
+                  id="txtUsuario"
+                  value="UsuarioDemo"
+                />
+
+                <label for="txtTelefono">Número de teléfono:</label>
+                <input
+                  type="tel"
+                  name="txtTelefono"
+                  id="txtTelefono"
+                  value="5551234567"
+                />
+
+                <label for="txtContra">Contraseña:</label>
+                <input
+                  type="password"
+                  name="txtContra"
+                  id="txtContra"
+                  value="12345678"
+                />
+              </div>
+            </div>
+            <div class="account-button">
+              <input type="submit" value="Guardar cambios" name="btnCambios" />
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-location">
+          <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+        </div>
+        <div class="footer-main">
+          <p>upool4754@gmail.com</p>
+          <p>
+            U-Pool,
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            ©
+          </p>
+        </div>
+        <div class="footer-img">
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-twitter"></i>
+        </div>
+      </footer>
+      <script src="../assets/main.js"></script>
+    </form>
+  </body>
+</html>

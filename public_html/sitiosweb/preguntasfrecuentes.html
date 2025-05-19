@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+      body {
+        font-family: "Figtree", Arial, sans-serif;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+              content.style.maxHeight = null;
+              content.style.animation = "slideIn 0.5s forwards";
+            } else {
+              content.style.display = "block";
+              content.style.animation = "slideIn 0.5s forwards";
+            }
+          });
+        }
+      });
+    </script>
+    <title>Preguntas Frecuentes</title>
+  </head>
+  <body>
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image">
+            <img src="assets/img/user.png" alt="logo" />
+          </span>
+          <div class="text header-text">
+            <span class="name">No has iniciado sesión</span>
+            <span class="profession"></span>
+          </div>
+        </div>
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+      <div class="menu-bar">
+        <div class="menu">
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a href="inicio.html">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Inicio</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="acceso.html">
+                <i class="bx bxs-door-open icon"></i>
+                <span class="text nav-text">Iniciar sesión</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="acercadenosotros.html">
+                <i class="bx bx-home-circle icon"></i>
+                <span class="text nav-text"
+                  >Acerca de<br />
+                  nosotros</span
+                >
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="preguntasfrecuentes.html">
+                <i class="bx bx-question-mark icon"></i>
+                <span class="text nav-text"
+                  >Preguntas<br />
+                  frecuentes</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="logo-slidebar">
+          <img src="assets/img/logo.png" alt="logo" class="logo-sidebar" />
+        </div>
+      </div>
+    </nav>
+
+    <main class="home">
+      <div class="main-preguntas">
+        <div class="preguntas-title">
+          <p>Servicio de ayuda de U-Pool para el usuario</p>
+          <h1>Preguntas frecuentes</h1>
+        </div>
+        <div class="preguntas">
+          <div class="collapsible">
+            <p>¿Qué necesito para ser conductor?</p>
+            <i class="bx bxs-chevron-down"></i>
+          </div>
+          <div class="content">
+            <p>
+              Usted podrá registrarse como conductor si cumple los siguientes
+              requisitos:
+            </p>
+            <ul>
+              <li>Posee licencia de conducir vigente</li>
+              <li>Cuenta con seguro de automóvil y seguro de accidentes</li>
+              <li>
+                Formar parte de la comunidad universitaria de la UPMH
+                (Estudiante, maestro, personal o administrativo)
+              </li>
+            </ul>
+          </div>
+          <div class="collapsible">
+            <p>¿Puedo reservar sus servicios para viajes fuera de la ciudad?</p>
+            <i class="bx bxs-chevron-down"></i>
+          </div>
+          <div class="content">
+            <p>
+              Claro, todos los viajes pueden ser reservados o publicados para
+              zonas o ciudades externas mientras los viajes sean dirigidos a la
+              universidad o viceversa en algun punto accesible para todos los
+              estudiantes
+            </p>
+          </div>
+          <div class="collapsible">
+            <p>
+              ¿Pueden utilizar el servicio personas externas a la universidad?
+            </p>
+            <i class="bx bxs-chevron-down"></i>
+          </div>
+          <div class="content">
+            <p>
+              No, por seguridad de nuestros usuarios, los viajes serán
+              exclusivos para aquellos que sean parte de la comunidad de la UPMH
+              y que posean una matrícula vigente de la universidad
+            </p>
+          </div>
+          <div class="collapsible">
+            <p>¿Los pagos son línea o por transferencias?</p>
+            <i class="bx bxs-chevron-down"></i>
+          </div>
+          <div class="content">
+            <p>
+              Los métodos de pago serán acordados directamente con los
+              conductores y será de manera completamente externa a la aplicación
+            </p>
+          </div>
+          <div class="collapsible">
+            <p>¿Cómo puedo coordinar mi parada en el viaje?</p>
+            <i class="bx bxs-chevron-down"></i>
+          </div>
+          <div class="content">
+            <p>
+              Todos los usuarios podrán registrase a un viaje siempre y cuando
+              su localización esté en la ruta de los conductores, una vez
+              registrado el usuario podra acordar con el conductor una
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-location">
+        <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+      </div>
+      <div class="footer-main">
+        <p>upool4754@gmail.com</p>
+        <p>U-Pool, <span id="year"></span>©</p>
+      </div>
+      <div class="footer-img">
+        <i class="bx bxl-facebook"></i>
+        <i class="bx bxl-twitter"></i>
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="assets/main.js"></script>
+  </body>
+</html>

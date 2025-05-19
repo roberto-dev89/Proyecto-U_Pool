@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const startDateInput = document.getElementById("txtFecha");
+
+        function setMinMaxDates() {
+          const today = new Date();
+          const tomorrow = new Date(today);
+          tomorrow.setDate(tomorrow.getDate() + 1);
+
+          // Encuentra el próximo viernes
+          const nextFriday = new Date(today);
+          while (nextFriday.getDay() !== 5) {
+            nextFriday.setDate(nextFriday.getDate() + 1);
+          }
+
+          startDateInput.min = formatDate(tomorrow);
+          startDateInput.max = formatDate(nextFriday);
+        }
+
+        function formatDate(date) {
+          return date.toISOString().split("T")[0];
+        }
+
+        function validateDate() {
+          const selectedDate = new Date(startDateInput.value);
+          const dayOfWeek = selectedDate.getDay();
+
+          // 0 para Domingo, 6 para Sábado
+          if (dayOfWeek === 0 || dayOfWeek === 6) {
+            alert(
+              "Los sábados y domingos no están disponibles. Por favor, seleccione otro día."
+            );
+            startDateInput.value = formatDate(new Date(startDateInput.min));
+          }
+        }
+
+        setMinMaxDates();
+        startDateInput.addEventListener("change", validateDate);
+      });
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+      body {
+        font-family: "Figtree", Arial, sans-serif, sans-serif;
+      }
+    </style>
+    <title>Publicar viaje</title>
+  </head>
+
+  <body>
+    <form method="post" id="frmPublicar">
+      <nav class="sidebar close">
+        <header>
+          <a href="micuenta1.html" id="account">
+            <div class="image-text">
+              <span class="image">
+                <img src="../fotos/betito.jpg" alt="logo" />
+              </span>
+              <div class="text header-text">
+                <span class="name">Usuario</span>
+                <span class="profession">Cliente</span>
+              </div>
+            </div>
+          </a>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
+        <div class="menu-bar">
+          <div class="menu">
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="cliente.html">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Inicio</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="buscarviaje.html">
+                  <i class="bx bx-car icon"></i>
+                  <span class="text nav-text">Buscar Viaje</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <!-- Fixed option: show "Solicita ser conductor" always as front-end only -->
+                <a href="registroConductor.html">
+                  <i class="bx bxs-car icon"></i>
+                  <span class="text nav-text">Solicita ser conductor</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="viajescliente.html">
+                  <i class="bx bx-trip icon"></i>
+                  <span class="text nav-text">Viajes</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="dudascliente.html">
+                  <i class="bx bx-help-circle icon"></i>
+                  <span class="text nav-text">Preguntas frecuentes</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="logo-slidebar">
+            <img src="../assets/img/logo.png" alt="logo" class="logo-sidebar" />
+          </div>
+          <div class="bottom-content">
+            <li class="logout">
+              <a href="../cerrarsesion.html">
+                <i class="bx bx-log-out icon"></i>
+                <span class="text nav-text">Cerrar sesión</span>
+              </a>
+            </li>
+          </div>
+        </div>
+      </nav>
+
+      <main class="home" id="search">
+        <form method="post">
+          <div class="buscar-main">
+            <div class="buscar-info" id="publicar-info">
+              <h2>Publica un viaje</h2>
+              <div class="info-inputs">
+                <i class="bx bx-map"></i>
+                <select name="lstOrigen" id="lstOrigen">
+                  <option value="1">Centro</option>
+                  <option value="2">Universidad</option>
+                  <option value="3">Terminal</option>
+                  <option value="4">Plaza</option>
+                </select>
+              </div>
+              <div class="info-inputs">
+                <i class="bx bx-map"></i>
+                <select name="lstDestino" id="lstDestino">
+                  <option value="1">Centro</option>
+                  <option value="2">Universidad</option>
+                  <option value="3">Terminal</option>
+                  <option value="4">Plaza</option>
+                </select>
+              </div>
+              <div class="info-inputs">
+                <i class="bx bx-user-pin"></i>
+                <input
+                  type="number"
+                  value=""
+                  placeholder="Cantidad de asientos disponibles"
+                  min="1"
+                  name="txtLugares"
+                />
+              </div>
+              <div class="info-inputs">
+                <i class="bx bx-coin"></i>
+                <input
+                  type="text"
+                  value=""
+                  placeholder="Costo por asiento"
+                  name="txtCosto"
+                />
+              </div>
+              <div class="info-inputs">
+                <i class="bx bx-time-five"></i>
+                <input type="time" min="06:00" max="21:00" name="txtHora" />
+              </div>
+              <div class="info-inputs">
+                <i class="bx bx-calendar"></i>
+                <input type="date" id="txtFecha" name="txtFecha" />
+              </div>
+              <div class="info-button">
+                <input type="submit" value="Publicar" name="btnPublicar" />
+              </div>
+            </div>
+          </div>
+        </form>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-location">
+          <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+        </div>
+        <div class="footer-main">
+          <p>upool4754@gmail.com</p>
+          <p>
+            U-Pool,
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            ©
+          </p>
+        </div>
+        <div class="footer-img">
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-twitter"></i>
+        </div>
+      </footer>
+      <script src="../assets/main.js"></script>
+    </form>
+  </body>
+</html>

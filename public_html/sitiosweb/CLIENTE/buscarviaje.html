@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+    body {
+      font-family: 'Figtree', Arial, sans-serif, sans-serif;
+    }
+  </style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Esconde el contenedor de viajes inicialmente
+    document.querySelector(".viajes").style.display = "none";
+
+    document.querySelector(".info-button input").addEventListener("click", function() {
+        // Muestra el contenedor de viajes
+        var viajesContenedor = document.querySelector(".viajes");
+        viajesContenedor.style.display = "block";
+        
+        // Inicia la animación de deslizamiento
+        viajesContenedor.classList.add("animate-viajes");
+    });
+});
+</script>
+    
+  <title>Buscar viaje</title>
+</head>
+
+<body>
+  <form method="post">
+    <nav class="sidebar close">
+        <header>
+          <a href="micuenta1.html" id="account">
+            <div class="image-text">
+              <span class="image">
+                <img src="../fotos/betito.jpg" alt="logo" />
+              </span>
+              <div class="text header-text">
+                <span class="name">Usuario</span>
+                <span class="profession">Cliente</span>
+              </div>
+            </div>
+          </a>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
+        <div class="menu-bar">
+          <div class="menu">
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="cliente.html">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Inicio</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="buscarviaje.html">
+                  <i class="bx bx-car icon"></i>
+                  <span class="text nav-text">Buscar Viaje</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <!-- Fixed option: show "Solicita ser conductor" always as front-end only -->
+                <a href="registroConductor.html">
+                  <i class="bx bxs-car icon"></i>
+                  <span class="text nav-text">Solicita ser conductor</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="viajescliente.html">
+                  <i class="bx bx-trip icon"></i>
+                  <span class="text nav-text">Viajes</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="dudascliente.html">
+                  <i class="bx bx-help-circle icon"></i>
+                  <span class="text nav-text">Preguntas frecuentes</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="logo-slidebar">
+            <img src="../assets/img/logo.png" alt="logo" class="logo-sidebar" />
+          </div>
+          <div class="bottom-content">
+            <li class="logout">
+              <a href="../cerrarsesion.html">
+                <i class="bx bx-log-out icon"></i>
+                <span class="text nav-text">Cerrar sesión</span>
+              </a>
+            </li>
+          </div>
+        </div>
+      </nav>
+
+    <main class="home">
+      <div class="buscar-main" id="#buscar-viaje-main">
+        <form method="post">
+            <div class="buscar-info">
+              <h2>Obten un viaje</h2>
+              <div class="info-inputs">
+                    <i class='bx bx-map' ></i>
+                    <select name="lstParada" id="lstParada">
+                        <option value="">Lugar 1</option>
+                        <option value="">Lugar 2</option>
+                    </select>
+                  </div>
+              <div class="info-inputs">
+                <i class='bx bx-time-five' ></i>
+                <input type="time" min="06:00" max="21:00" name="txtHora" value="">
+              </div>
+              <div class="info-inputs">
+                <i class='bx bx-calendar' ></i>
+                <input type="date" id="txtFecha" name="txtFecha" value="">
+              </div>
+              <div class="info-button1">
+                <input type="submit" value="Buscar" name="btnBuscar">
+              </div>
+              <div class="info-button buscar">
+                <input type="button" value="Cargar" style="">
+              </div>
+            </div>
+        </form>
+        
+        <div class="viajes" id="buscar-viaje">
+            <!-- Aquí irán los viajes encontrados -->
+        </div>
+</div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-location">
+        <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+      </div>
+      <div class="footer-main">
+        <p>upool4754@gmail.com</p>
+        <p>U-Pool,
+          <script type="text/javascript">document.write(new Date().getFullYear());</script>©
+        </p>
+      </div>
+      <div class="footer-img">
+        <i class='bx bxl-facebook'></i>
+        <i class='bx bxl-twitter'></i>
+      </div>
+    </footer>
+    <script src="../assets/main.js"></script>
+</body>
+
+</html>

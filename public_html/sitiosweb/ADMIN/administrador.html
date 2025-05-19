@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+      body {
+        font-family: "Figtree", Arial, sans-serif, sans-serif;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        setTimeout(function () {
+          $(".mensaje-bienvenida").fadeOut(1500);
+        }, 1000);
+      });
+    </script>
+    <title>U-Pool</title>
+  </head>
+  <body>
+    <form id="frmAdmin" method="POST">
+      <nav class="sidebar close">
+        <header>
+          <a href="miCuenta.html" id="account">
+            <div class="image-text">
+              <span class="image">
+                <img src="../fotos/betito.jpg" alt="logo" />
+              </span>
+              <div class="text header-text">
+                <span class="name">Usuario</span>
+                <span class="profession">Administrador</span>
+              </div>
+            </div>
+          </a>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
+
+        <div class="menu-bar">
+          <div class="menu">
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="administrador.html">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Inicio</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="listarusuarios.html">
+                  <i class="bx bxs-door-open icon"></i>
+                  <span class="text nav-text">Usuarios</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="viajes.html">
+                  <i class="bx bxs-user-account icon"></i>
+                  <span class="text nav-text">Viajes</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="solicitudes.html">
+                  <i class="bx bxs-notification icon"></i>
+                  <span class="text nav-text">Solicitudes</span>
+                </a>
+              </li>
+              <li class="logout">
+                <a href="../cerrarsesion.html">
+                  <i class="bx bx-log-out icon"></i>
+                  <span class="text nav-text">Cerrar sesión</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="logo-slidebar">
+            <img src="../assets/img/logo.png" alt="logo" class="logo-sidebar" />
+          </div>
+        </div>
+      </nav>
+      <main class="home">
+        <section class="banner-main">
+          <img
+            class="logo-banner-main"
+            src="../assets/img/logo.jpg"
+            alt="logo"
+          />
+          <img
+            class="fondo-banner-main"
+            src="../assets/img/banner-main.jpg"
+            alt="banner-main image"
+          />
+        </section>
+        <section
+          class="mensaje-bienvenida"
+          style="
+            animation: transparente 2s 3s forwards, desaparece 1s 4.55s forwards;
+          "
+        >
+          <div>
+            <h2>¡Bienvenido Administrador!</h2>
+          </div>
+        </section>
+        <section class="card-section">
+          <div class="card">
+            <i class="bx bx-data icon"></i>
+            <h3 class="card-title">Herramientas de administración</h3>
+            <p class="card-text">
+              Como administrador, tendrás las herramientas necesarias para
+              cuidar completamente de la comunidad educativa, verificando los
+              datos de los usuarios y los datos de viajes publicados
+            </p>
+          </div>
+          <div class="card">
+            <i class="bx bx-lock-alt icon"></i>
+            <h3 class="card-title">
+              Verifica la información de los conductores
+            </h3>
+            <p class="card-text">
+              Tendrás información de los conductores registrados para asegurar
+              que los usuarios viajeros tengan una experiencia segura y
+              agradable
+            </p>
+          </div>
+          <div class="card">
+            <i class="bx bx-intersect icon"></i>
+            <h3 class="card-title">Interfaces intuitivas</h3>
+            <p class="card-text">
+              No te molestes en leer un instructivo, como administrador tienes
+              todas las herramientas necesarias en esta aplicación web, todo con
+              un diseño simple y fácil de comprender
+            </p>
+          </div>
+        </section>
+
+        <section class="banner-section" id="banner-section-admin">
+          <div class="banner-image" id="banner-admin">
+            <img src="../assets/img/banner-section1.jpg" alt="security image" />
+          </div>
+          <div class="banner-text">
+            <h2>Ayudanos a proteger la comunidad</h2>
+            <p>
+              Recuerde que su colaboración es esencial para proteger nuestra
+              comunidad. Mantenga vigilancia activa, reporte actividad
+              sospechosa, y fomente una cultura de respeto. Su compromiso
+              garantiza un entorno seguro para todos.
+            </p>
+            <a href="listarusuarios.html"
+              ><input type="button" value="Mas información"
+            /></a>
+          </div>
+        </section>
+        <section class="inicio-viajes">
+          <div class="inicio-viajes-text">
+            <h2>Revisa los viajes</h2>
+            <p>
+              Queremos recordarle que como parte de nuestras políticas de
+              seguridad y servicio al cliente, tiene la facultad de revisar los
+              detalles de los viajes realizados por nuestros clientes. Esta
+              medida nos ayuda a garantizar la integridad de nuestras
+              operaciones y a brindar un mejor servicio. Si necesita acceder a
+              esta información, no dude en contactarnos.
+            </p>
+            <a href="viajes.html"><input type="button" value="Ver viajes" /></a>
+          </div>
+          <div class="inicio-viajes-img">
+            <img src="../assets/img/banner-section1.jpg" alt="viajes image" />
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-location">
+          <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+        </div>
+        <div class="footer-main">
+          <p>upool4754@gmail.com</p>
+          <p>
+            U-Pool,
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            ©
+          </p>
+        </div>
+        <div class="footer-img">
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-twitter"></i>
+        </div>
+      </footer>
+      <script src="../assets/main.js"></script>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+      body {
+        font-family: "Figtree", Arial, sans-serif, sans-serif;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const formLogin = document.querySelector(".form-login");
+        const originalFormHTML = formLogin.innerHTML; // Guardar el HTML original del formulario de login
+
+        const btnRegistro = document.getElementById("btnRegistro");
+        btnRegistro.addEventListener("click", function (e) {
+          e.preventDefault();
+          changeToRegisterForm();
+        });
+
+        function changeToRegisterForm() {
+          formLogin.innerHTML = `
+                    <p>Regístrate</p>
+                    <div class="box-login">
+                        <label for="txtMatricula">Matrícula</label>
+                        <input type="number" name="txtMatricula" id="txtMatricula" required>
+                    </div>
+                    <div class="box-login">
+                        <label for="txtUsuarioNuevo">Usuario</label>
+                        <input type="text" name="txtUsuarioNuevo" id="txtUsuarioNuevo" required>
+                    </div>
+                    <div class="box-login">
+                        <label for="txtContraNueva">Contraseña</label>
+                        <input type="password" name="txtContraNueva" id="txtContraNueva" required>
+                    </div>
+                    <div class="box-login">
+                        <label for="txtTelefono">Teléfono</label>
+                        <input type="tel" name="txtTelefono" id="txtTelefono" required>
+                    </div>
+                    <div class="box-login-button">
+                        <input type="submit" value="Registrarse" class="button" name="btnRegistrarse" onclick="alert('Simulación de registro. No se realiza ninguna acción real.'); return false;">
+                        <input type="button" value="Volver" class="button" name="btnVolver" id="btnVolver">
+                    </div>
+                `;
+          formLogin.style.animation = "slideIn 0.5s forwards";
+
+          document
+            .getElementById("btnVolver")
+            .addEventListener("click", function () {
+              formLogin.innerHTML = originalFormHTML;
+              formLogin.style.animation = "slideIn 0.5s forwards";
+              document
+                .getElementById("btnRegistro")
+                .addEventListener("click", function (e) {
+                  e.preventDefault();
+                  changeToRegisterForm();
+                });
+            });
+        }
+      });
+    </script>
+    <title>Accede</title>
+  </head>
+  <body>
+    <form
+      id="frmAcceso"
+      method="POST"
+      autocomplete="off"
+      onsubmit="alert('Simulación de acceso. No se realiza ninguna acción real.'); return false;"
+    >
+      <nav class="sidebar close">
+        <header>
+          <div class="image-text">
+            <span class="image">
+              <img src="assets/img/user.png" alt="logo" />
+            </span>
+            <div class="text header-text">
+              <span class="name">No has iniciado sesión</span>
+              <span class="profession"></span>
+            </div>
+          </div>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
+        <div class="menu-bar">
+          <div class="menu">
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="inicio.html">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Inicio</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="acceso.html">
+                  <i class="bx bxs-door-open icon"></i>
+                  <span class="text nav-text">Iniciar sesión</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="acercadenosotros.html">
+                  <i class="bx bx-home-circle icon"></i>
+                  <span class="text nav-text"
+                    >Acerca de<br />
+                    nosotros</span
+                  >
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="preguntasfrecuentes.html">
+                  <i class="bx bx-question-mark icon"></i>
+                  <span class="text nav-text"
+                    >Preguntas<br />
+                    frecuentes</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="logo-slidebar">
+            <img src="assets/img/logo.png" alt="logo" class="logo-sidebar" />
+          </div>
+        </div>
+      </nav>
+
+      <main class="home" id="acceso">
+        <section class="info">
+          <div class="title-info">
+            <h1><br />Prueba ahora el nuevo método de transporte!</h1>
+          </div>
+          <div class="about-info">
+            <p class="simple-text">Unete al programa y descubre las ventajas</p>
+            <p class="sub-title">
+              <i class="bx bx-user icon"></i> &ensp; Un servicio Pensado para
+              los estudiantes
+            </p>
+            <p class="sub-title">
+              <i class="bx bx-shield-plus icon"></i> &ensp; La comunidad
+              estudiantil se ayudará mutuamente de una manera eficaz y segura
+            </p>
+            <p class="sub-title">
+              <i class="bx bx-coin icon"></i> &ensp; Ahorra tiempo y dinero
+            </p>
+            <p class="sub-title">
+              <i class="bx bx-car icon"></i> &ensp; Conoce a conductores
+              calificados
+            </p>
+            <p class="sub-title">
+              <i class="bx bxs-car icon"></i> &ensp; Comparte viajes con la
+              comunidad
+            </p>
+            <br />
+            <h3>Acceso:</h3>
+            <br />
+            <strong>administrador</strong> <br /><span>Matrícula: admin</span>
+            <br /><span>Contraseña: admin</span> <br />
+            <strong>cliente</strong> <br /><span>Matrícula: cliente</span>
+            <br /><span>Contraseña: cliente</span>
+          </div>
+        </section>
+        <section class="login">
+          <div class="form-login">
+            <p>Acceder</p>
+            <div class="box-login">
+              <label for="txtUsuario">Matrícula</label>
+              <input
+                type="text"
+                value=""
+                name="txtUsuario"
+                id="txtUsuario"
+                required
+              />
+            </div>
+            <div class="box-login">
+              <label for="txtContra">Contraseña</label>
+              <input
+                type="password"
+                value=""
+                name="txtContra"
+                id="txtContra"
+                required
+              />
+            </div>
+            <div class="box-login-button">
+              <input
+                type="submit"
+                value="Entrar"
+                class="button"
+                name="btnEntrar"
+              />
+              <input
+                type="reset"
+                value="Cancelar"
+                class="button"
+                name="btnCancelar"
+                onclick="location.href='inicio.php'"
+              />
+            </div>
+            <div class="box-login-button">
+              <label for="btnRegistro">¿No estás registrado?</label><br /><br />
+              <input
+                type="button"
+                value="Registrate"
+                class="button"
+                name="btnRegistro"
+                id="btnRegistro"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer-location">
+          <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+        </div>
+        <div class="footer-main">
+          <p>upool4754@gmail.com</p>
+          <p>
+            U-Pool,
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            ©
+          </p>
+        </div>
+        <div class="footer-img">
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-twitter"></i>
+        </div>
+      </footer>
+    </form>
+    <script src="assets/main.js"></script>
+  </body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // ... (tu código existente aquí)
+
+    // Validación de acceso
+    const frmAcceso = document.getElementById("frmAcceso");
+    frmAcceso.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const matricula = document.getElementById("txtUsuario").value.trim();
+      const contra = document.getElementById("txtContra").value.trim();
+
+      // Validación para admin
+      if (matricula === "admin" && contra === "admin") {
+        window.location.href = "Admin/administrador.html";
+        return;
+      }
+      // Validación para cliente
+      if (matricula === "cliente" && contra === "cliente") {
+        window.location.href = "Cliente/cliente.html";
+        return;
+      }
+      alert("Matrícula o contraseña incorrecta.");
+    });
+  });
+</script>

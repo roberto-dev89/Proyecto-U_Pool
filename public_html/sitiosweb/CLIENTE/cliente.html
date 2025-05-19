@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+      body {
+        font-family: "Figtree", Arial, sans-serif, sans-serif;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        setTimeout(function () {
+          $(".mensaje-bienvenida").fadeOut(1500);
+        }, 1000);
+      });
+    </script>
+    <title>U-Pool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <form id="frmCliente" method="POST">
+      <nav class="sidebar close">
+        <header>
+          <a href="micuenta1.html" id="account">
+            <div class="image-text">
+              <span class="image">
+                <img src="../fotos/betito.jpg" alt="logo" />
+              </span>
+              <div class="text header-text">
+                <span class="name">Usuario</span>
+                <span class="profession">Cliente</span>
+              </div>
+            </div>
+          </a>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
+        <div class="menu-bar">
+          <div class="menu">
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="cliente.html">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Inicio</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="buscarviaje.html">
+                  <i class="bx bx-car icon"></i>
+                  <span class="text nav-text">Buscar Viaje</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <!-- Fixed option: show "Solicita ser conductor" always as front-end only -->
+                <a href="registroConductor.html">
+                  <i class="bx bxs-car icon"></i>
+                  <span class="text nav-text">Solicita ser conductor</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="viajescliente.html">
+                  <i class="bx bx-trip icon"></i>
+                  <span class="text nav-text">Viajes</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="dudascliente.html">
+                  <i class="bx bx-help-circle icon"></i>
+                  <span class="text nav-text">Preguntas frecuentes</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="logo-slidebar">
+            <img src="../assets/img/logo.png" alt="logo" class="logo-sidebar" />
+          </div>
+          <div class="bottom-content">
+            <li class="logout">
+              <a href="../cerrarsesion.html">
+                <i class="bx bx-log-out icon"></i>
+                <span class="text nav-text">Cerrar sesión</span>
+              </a>
+            </li>
+          </div>
+        </div>
+      </nav>
+      <main class="home">
+        <section class="banner-main">
+          <img
+            class="logo-banner-main"
+            src="../assets/img/logo.jpg"
+            alt="logo"
+          />
+          <img
+            class="fondo-banner-main"
+            src="../assets/img/banner-main.jpg"
+            alt="banner-main image"
+          />
+        </section>
+        <section
+          class="mensaje-bienvenida"
+          style="
+            animation: transparente 2s 3s forwards, desaparece 1s 4.55s forwards;
+          "
+        >
+          <div>
+            <h2>¡Bienvenido Usuario!</h2>
+          </div>
+        </section>
+        <section class="card-section">
+          <div class="card">
+            <i class="bx bx-coin-stack icon"></i>
+            <h3 class="card-title">Los mejores viajes al mejor precio</h3>
+            <p class="card-text">
+              De tu hogar a la universidad, encuentra el viaje perfecto entre
+              nuestros miles de destinos y rutas, al mejor precio.
+            </p>
+          </div>
+          <div class="card">
+            <i class="bx bx-lock-alt icon"></i>
+            <h3 class="card-title">Viaja con confianza</h3>
+            <p class="card-text">
+              Nos aseguramos de conocer a cada uno de nuestros miembros y socios
+              viajeros. Verificamos los perfiles y las identificaciones para que
+              sepas con quién viajas y puedas reservar tu viaje con confianza en
+              nuestra plataforma segura
+            </p>
+          </div>
+          <div class="card">
+            <i class="bx bx-fast-forward icon"></i>
+            <h3 class="card-title">¡Desliza, haz clic y vamos!</h3>
+            <p class="card-text">
+              ¡Reservar viajes nunca fue tan fácil! Con nuestra sencilla app
+              respalsada por una tecnología, puedes reservar un viaje cerca de
+              ti en cuestión de minutos.
+            </p>
+          </div>
+        </section>
+        <section class="banner-section">
+          <div class="banner-image">
+            <img src="../assets/img/banner-image.gif" alt="security image" />
+          </div>
+          <div class="banner-text">
+            <h2>Estamos aquí para ti en cada paso del camino.</h2>
+            <p>
+              Si en algún momento surge alguna pregunta o inquietud, no dude en
+              contactarnos. Nuestro equipo de atención al cliente está
+              disponible y listo para ayudarlo con cualquier consulta que pueda
+              tener. Su satisfacción es nuestra prioridad, y estamos
+              comprometidos a brindarle el mejor servicio posible. ¡No dude en
+              comunicarse con nosotros siempre que lo necesite!
+            </p>
+            <a href="dudascliente.html"
+              ><input type="button" value="Más información"
+            /></a>
+          </div>
+        </section>
+        <section class="inicio-viajes">
+          <div class="inicio-viajes-text" style="margin-top: 5%">
+            <h2>¿A dónde viajarás?</h2>
+            <p style="text-align: center">
+              ¡Encontremos el mejor viaje para ti!
+            </p>
+            <a href="buscarviaje.html"
+              ><input type="button" value="Ver viajes"
+            /></a>
+          </div>
+          <div class="inicio-viajes-img">
+            <img src="../assets/img/banner-section1.jpg" alt="viajes image" />
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer-location">
+          <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+        </div>
+        <div class="footer-main">
+          <p>upool4754@gmail.com</p>
+          <p>
+            U-Pool,
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            ©
+          </p>
+        </div>
+        <div class="footer-img">
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-twitter"></i>
+        </div>
+      </footer>
+      <script src="../assets/main.js"></script>
+    </form>
+  </body>
+</html>

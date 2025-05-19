@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+        body{
+            font-family: 'Figtree', Arial, sans-serif;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            setTimeout(function() {
+                $(".mensaje-bienvenida").fadeOut(1500);
+            },1000);
+        });
+    </script>
+    <title>U-Pool</title>
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="assets/img/user.png" alt="logo"/>
+                </span>
+                <div class="text header-text">
+                    <span class="name">No has iniciado sesión</span>
+                    <span class="profession"></span>
+                </div>
+            </div>
+            <i class="bx bx-chevron-right toggle"></i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="inicio.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="acceso.html">
+                            <i class='bx bxs-door-open icon' ></i>
+                            <span class="text nav-text">Iniciar sesión</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="acercadenosotros.html">
+                            <i class='bx bx-home-circle icon'></i>
+                            <span class="text nav-text">Acerca de<br> nosotros</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="preguntasfrecuentes.html">
+                            <i class='bx bx-question-mark icon' ></i>
+                            <span class="text nav-text">Preguntas<br> frecuentes</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo-slidebar">
+                <img src="assets/img/logo.png" alt="logo" class="logo-sidebar">
+            </div>
+        </div>
+    </nav>
+    <main class="home">
+        <section class="banner-main">
+            <img class="logo-banner-main" src="assets/img/logo.jpg" alt="logo">
+            <img class="fondo-banner-main" src="assets/img/banner-main.jpg" alt="banner-main image">
+        </section>
+        <section class="mensaje-bienvenida" style="animation: transparente 2s 3s forwards, desaparece 1s 4.55s forwards; margin-left: 5%;">
+            <div>
+                <h2>¡Bienvenido!</h2>
+            </div>
+        </section>
+        <section class="card-section">
+            <div class="card">
+                <i class='bx bx-coin-stack icon'></i>
+                <h3 class="card-title">Los mejores viajes al mejor precio</h3>
+                <p class="card-text">De tu hogar a la universidad, encuentra el viaje perfecto entre nuestros miles de destinos y rutas, al mejor precio.</p>
+            </div>
+            <div class="card">
+                <i class='bx bx-lock-alt icon'></i>
+                <h3 class="card-title">Viaja con confianza</h3>
+                <p class="card-text">Nos aseguramos de conocer a cada uno de nuestros miembros y socios viajeros. Verificamos los perfiles y las identificaciones para que sepas con quién viajas y puedas reservar tu viaje con confianza en nuestra plataforma segura</p>
+            </div>
+            <div class="card">
+                <i class='bx bx-fast-forward icon'></i>
+                <h3 class="card-title">¡Desliza, haz clic y vamos!</h3>
+                <p class="card-text">¡Reservar viajes nunca fue tan fácil! Con nuestra sencilla app respalsada por una tecnología, puedes reservar un viaje cerca de ti en cuestión de minutos.</p>
+            </div>
+        </section>
+        <section class="banner-section">
+            <div class="banner-image">
+                <img src="assets/img/banner-image.gif" alt="security image">
+            </div>
+            <div class="banner-text">
+                <h2>Misión</h2>
+                <p>Facilitar el carpooling estudiantil promoviendo conexiones seguras y eficientes para reducir la congestión y el impacto ambiental.</p>
+                <h2>Visión</h2>
+                <p>Ser la principal plataforma de carpooling estudiantil reconocida por su impacto positivo en la comunidad universitaria y en el medio ambiente, impulsando una cultura de movilidad compartida y sostenible.</p>
+                <input type="button" value="Mas información" onclick="location.href='acercadenosotros.html'">
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-location">
+            <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+        </div>
+        <div class="footer-main">
+            <p>upool4754@gmail.com</p>
+            <p>U-Pool, <span id="year"></span>©</p>
+        </div>
+        <div class="footer-img">
+            <i class='bx bxl-facebook'></i>
+            <i class='bx bxl-twitter' ></i>        
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="assets/main.js"></script>
+</body>
+</html>

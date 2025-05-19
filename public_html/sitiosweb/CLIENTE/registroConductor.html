@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+      body {
+        font-family: "Figtree", Arial, sans-serif, sans-serif;
+      }
+    </style>
+    <title>Registro Conductor</title>
+  </head>
+
+  <body>
+    <form id="frmAcceso" method="POST">
+      <nav class="sidebar close">
+        <header>
+          <a href="micuenta1.html" id="account">
+            <div class="image-text">
+              <span class="image">
+                <img src="../fotos/betito.jpg" alt="logo" />
+              </span>
+              <div class="text header-text">
+                <span class="name">Usuario</span>
+                <span class="profession">Cliente</span>
+              </div>
+            </div>
+          </a>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
+        <div class="menu-bar">
+          <div class="menu">
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="cliente.html">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Inicio</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="buscarviaje.html">
+                  <i class="bx bx-car icon"></i>
+                  <span class="text nav-text">Buscar Viaje</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <!-- Fixed option: show "Solicita ser conductor" always as front-end only -->
+                <a href="registroConductor.html">
+                  <i class="bx bxs-car icon"></i>
+                  <span class="text nav-text">Solicita ser conductor</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="viajescliente.html">
+                  <i class="bx bx-trip icon"></i>
+                  <span class="text nav-text">Viajes</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="dudascliente.html">
+                  <i class="bx bx-help-circle icon"></i>
+                  <span class="text nav-text">Preguntas frecuentes</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="logo-slidebar">
+            <img src="../assets/img/logo.png" alt="logo" class="logo-sidebar" />
+          </div>
+          <div class="bottom-content">
+            <li class="logout">
+              <a href="../cerrarsesion.html">
+                <i class="bx bx-log-out icon"></i>
+                <span class="text nav-text">Cerrar sesión</span>
+              </a>
+            </li>
+          </div>
+        </div>
+      </nav>
+      <main class="home" id="conductor">
+        <section class="login" id="conductor-register">
+          <div class="form-conductor">
+            <p>Registrate como conductor</p>
+            <div class="main-box">
+              <div class="box-container1">
+                <div class="box-conductor">
+                  <label for="permiso-conducir-frente"
+                    >Foto de permiso de conducir (Frontal)</label
+                  >
+                  <input
+                    type="file"
+                    id="permiso-conducir-frente"
+                    name="permiso-conducir-frente"
+                    accept="image/*"
+                    required
+                  />
+                </div>
+                <div class="box-conductor">
+                  <label for="permiso-conducir-atras"
+                    >Foto de permiso de conducir (Trasera)</label
+                  >
+                  <input
+                    type="file"
+                    id="permiso-conducir-atras"
+                    name="permiso-conducir-atras"
+                    accept="image/*"
+                    required
+                  />
+                </div>
+                <div class="box-conductor">
+                  <label for="seguro-vehicular"
+                    >Foto de Comprobante de seguro vehicular</label
+                  >
+                  <input
+                    type="file"
+                    id="seguro-vehicular"
+                    name="seguro-vehicular"
+                    accept="image/*"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="box-container2">
+                <div class="box-conductor">
+                  <label for="auto-perfil">Foto de automóvil (Perfil)</label>
+                  <input
+                    type="file"
+                    id="auto-perfil"
+                    name="auto-perfil"
+                    accept="image/*"
+                    required
+                  />
+                </div>
+                <div class="box-conductor">
+                  <label for="auto-frente">Foto de automóvil (Frontal)</label>
+                  <input
+                    type="file"
+                    id="auto-frente"
+                    name="auto-frente"
+                    accept="image/*"
+                    required
+                  />
+                </div>
+                <div class="box-conductor">
+                  <label for="auto-atras">Foto de automóvil (Trasera)</label>
+                  <input
+                    type="file"
+                    id="auto-atras"
+                    name="auto-atras"
+                    accept="image/*"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="box-login-button" id="conductor-button">
+              <input
+                type="submit"
+                value="Entrar"
+                class="button"
+                name="btnEntrar"
+              />
+              <input
+                type="reset"
+                value="Cancelar"
+                class="button"
+                name="btnCancelar"
+                onclick="location.href='cliente.php'"
+              />
+            </div>
+          </div>
+        </section>
+        <section class="info">
+          <div class="title-info">
+            <h1><br />Conviertete en conductor ahora mismo</h1>
+          </div>
+          <div class="about-info">
+            <p class="sub-title">
+              <i class="bx bx-car icon"></i> &ensp; Apoya a la comunidad en su
+              trayecto a la universidad
+            </p>
+            <p class="sub-title">
+              <i class="bx bx-shield-plus icon"></i> &ensp; Transmite seguridad
+              y confianza a los pasajeros
+            </p>
+            <p class="sub-title">
+              <i class="bx bx-coin icon"></i> &ensp; Obten ganancias mientras
+              realizas tu trayecto a la institución!
+            </p>
+            <p class="sub-title">
+              <i class="bx bx-user icon"></i> &ensp; Conoce más integrantes de
+              la comunidad mientras los ayudas
+            </p>
+            <p class="sub-title">
+              <i class="bx bx-map icon"></i> &ensp; Comparte tu trayecto,
+              horario de viaje y disfruta la experiencia
+            </p>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer-location">
+          <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+        </div>
+        <div class="footer-main">
+          <p>upool4754@gmail.com</p>
+          <p>
+            U-Pool,
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            ©
+          </p>
+        </div>
+        <div class="footer-img">
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-twitter"></i>
+        </div>
+      </footer>
+      <script src="../assets/main.js"></script>
+    </form>
+  </body>
+</html>

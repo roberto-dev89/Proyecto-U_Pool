@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+      body {
+        font-family: "Figtree", Arial, sans-serif, sans-serif;
+      }
+      /* Example for table images */
+      td img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    </style>
+    <title>Usuarios</title>
+  </head>
+  <body>
+    <form id="frmAdmin" method="POST">
+      <nav class="sidebar close">
+        <header>
+          <a href="miCuenta.html" id="account">
+            <div class="image-text">
+              <span class="image">
+                <img src="../fotos/betito.jpg" alt="logo" />
+              </span>
+              <div class="text header-text">
+                <span class="name">Usuario</span>
+                <span class="profession">Administrador</span>
+              </div>
+            </div>
+          </a>
+          <i class="bx bx-chevron-right toggle"></i>
+        </header>
+
+        <div class="menu-bar">
+          <div class="menu">
+            <ul class="menu-links">
+              <li class="nav-link">
+                <a href="administrador.html">
+                  <i class="bx bx-home-alt icon"></i>
+                  <span class="text nav-text">Inicio</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="listarusuarios.html">
+                  <i class="bx bxs-door-open icon"></i>
+                  <span class="text nav-text">Usuarios</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="viajes.html">
+                  <i class="bx bxs-user-account icon"></i>
+                  <span class="text nav-text">Viajes</span>
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="solicitudes.html">
+                  <i class="bx bxs-notification icon"></i>
+                  <span class="text nav-text">Solicitudes</span>
+                </a>
+              </li>
+              <li class="logout">
+                <a href="../cerrarsesion.html">
+                  <i class="bx bx-log-out icon"></i>
+                  <span class="text nav-text">Cerrar sesión</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="logo-slidebar">
+            <img src="../assets/img/logo.png" alt="logo" class="logo-sidebar" />
+          </div>
+        </div>
+      </nav>
+      <main class="home">
+        <section class="tabla-container">
+          <div class="table-wrapper">
+            <div class="table-title">
+              <span>Usuarios</span>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>FOTO</th>
+                  <th>NOMBRE</th>
+                  <th>USUARIO</th>
+                  <th>CONTRASEÑA</th>
+                  <th>TELEFONO</th>
+                  <th>ESTATUS</th>
+                  <th>FECHA</th>
+                  <th>ELIMINAR</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Example static rows, add more as needed -->
+                <tr align="center">
+                  <td>1</td>
+                  <td>
+                    <img src="../fotos/pau.jpg" alt="Foto" />
+                  </td>
+                  <td>Juan Pérez</td>
+                  <td>juanp</td>
+                  <td>********</td>
+                  <td>555-1234</td>
+                  <td>Activo</td>
+                  <td>2024-06-01</td>
+                  <td>
+                    <input
+                      type="button"
+                      onclick="eliminarUsuario(this)"
+                      value="Eliminar"
+                    />
+                  </td>
+                </tr>
+                <tr align="center">
+                  <td>2</td>
+                  <td>
+                    <img src="../fotos/miguel.jpg" alt="Foto" />
+                  </td>
+                  <td>Maria López</td>
+                  <td>marial</td>
+                  <td>********</td>
+                  <td>555-5678</td>
+                  <td>Inactivo</td>
+                  <td>2024-05-20</td>
+                  <td>
+                    <input
+                      type="button"
+                      onclick="eliminarUsuario(this)"
+                      value="Eliminar"
+                    />
+                  </td>
+                </tr>
+                <tr align="center">
+                  <td>3</td>
+                  <td>
+                    <img src="../fotos/beto.png" alt="Foto" />
+                  </td>
+                  <td>Carlos Ruiz</td>
+                  <td>carlosr</td>
+                  <td>********</td>
+                  <td>555-8765</td>
+                  <td>Activo</td>
+                  <td>2024-04-15</td>
+                  <td>
+                    <input
+                      type="button"
+                      onclick="eliminarUsuario(this)"
+                      value="Eliminar"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pagination">
+              <a href="#" class="active">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+            </div>
+            <div class="user-register-button">
+              <a
+                href="registroUsuarios.html"
+                style="text-decoration: none"
+                class="button-link"
+              >
+                Registrar nuevo usuario
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer-location">
+          <p>Ex Hacienda San Javier, Tolcayuca 1009, 43860 Tolcayuca, Hgo.</p>
+        </div>
+        <div class="footer-main">
+          <p>upool4754@gmail.com</p>
+          <p>
+            U-Pool,
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            ©
+          </p>
+        </div>
+        <div class="footer-img">
+          <i class="bx bxl-facebook"></i>
+          <i class="bx bxl-twitter"></i>
+        </div>
+      </footer>
+      <script>
+        function eliminarUsuario(btn) {
+          // Remove the row from the table
+          if (confirm("¿Seguro que deseas eliminar este usuario?")) {
+            var row = btn.closest("tr");
+            row.parentNode.removeChild(row);
+          }
+        }
+      </script>
+      <script src="../assets/main.js"></script>
+    </form>
+  </body>
+</html>
