@@ -1,0 +1,2 @@
+- El proyecto de U-Pool fue originalmente desarrollado como un proyecto escolar universitario como propuesta de un equipo integrado por mi y 3 compañeros más.
+- Este fue desarrollado para ser usado en un hosting gratuito que actualmente ha desaparecido, 000WebHost, por lo cual lo he adaptado para que funcione como HTML solo, disminuyendo su funcionalidad, pero manteniendo la apariencia que se trabajó con HTML, CSS y JavaScript puro.
